@@ -1,3 +1,100 @@
+# LLM Interface
+
+A responsive web application that allows users to interact with a Large Language Model (LLM) via a modern interface.
+
+## Prerequisites
+- Python 3.8+
+- Node.js 18+
+- OpenAI API Key
+
+## Setup Instructions
+
+### Backend
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+## Create and activate a virtual environment:
+
+```code
+python -m venv venv
+```
+```code
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+## Install dependencies:
+```code
+pip install -r requirements.txt
+```
+## Copy .env.example to .env and add your OpenAI API key:
+```code
+OPENAI_API_KEY=your_api_key_here
+```
+
+### Run the server:
+```code
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+## Frontend
+- Navigate to the frontend directory:
+```code
+cd frontend
+```
+
+### Install dependencies:
+```code
+npm install
+```
+
+### Run the development server:
+```code
+npm run dev
+```
+
+- Open http://localhost:3000 in your browser.
+
+
+# LLM Integration
+- The backend uses OpenAI's gpt-3.5-turbo model.
+- User questions are sent as {"role": "user", "content": "<question>"} in the messages parameter.
+  
+# Notes
+- Ensure the backend is running before starting the frontend.
+- Security measures are disregarded as per the project scope.
+
+  
+## Test the Application
+- Start the backend server.
+- Start the frontend server.
+- Open http://localhost:3000.
+- Type a question (e.g., "What is the capital of France?") and submit.
+- Verify the response appears, loading state works, and history updates.
+
+
+## Push to GitHub
+
+### Initialize Git:
+```code
+git init
+git add .
+git commit -m "Initial commit"
+```
+### Create a repository on GitHub and push:
+```code
+git remote add origin <your-repo-url>
+git push -u origin main
+```
+
+## Notes
+- Prompt Engineering: The backend sends the user’s question directly to OpenAI as a user message, keeping it simple yet effective.
+- Optional Bonus: The history feature is implemented using React state for simplicity.
+
+
+
+# FRONTEND
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
